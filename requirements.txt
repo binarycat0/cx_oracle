@@ -1,1 +1,1 @@
-cx-Oracle==5.3
+cx-Oracle
