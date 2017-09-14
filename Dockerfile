@@ -15,6 +15,4 @@ ENV LD_LIBRARY_PATH /usr/lib/oracle/12.1/client64/lib
 ENV TNS_ADMIN $ORACLE_HOME/network/admin
 
 RUN pip install --upgrade pip
-WORKDIR /app
-ADD requirements.txt /app
-RUN pip install -r requirements.txt
+RUN pip install cx-Oracle==6.0.2
