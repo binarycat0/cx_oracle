@@ -1,4 +1,9 @@
-# python27 cx_oracle
+## How to use
+```
+https://github.com/catbinary/cx_oracle_example
+```
+
+## python27 cx_oracle
 
 ## centos
 ```
@@ -26,3 +31,4 @@ ENV TNS_ADMIN $ORACLE_HOME/network/admin
 ```
 cx-Oracle==6.0.2
 ```
+
