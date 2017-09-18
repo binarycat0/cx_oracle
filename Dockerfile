@@ -1,8 +1,10 @@
-FROM centos:latest
+FROM centos:7
 
 RUN yum install -y epel-release
 RUN yum install -y python-pip
 RUN yum install -y libaio
+
+RUN yum clean all
 
 COPY ./ora /opt/ora
 
