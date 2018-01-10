@@ -14,9 +14,16 @@ libaio
 
 ### oracle instantclient packages
 ```
-oracle-instantclient12.2-basic-12.2.0.1.0-1.x86_64.rpm
-oracle-instantclient12.2-devel-12.2.0.1.0-1.x86_64.rpm
-oracle-instantclient12.2-sqlplus-12.2.0.1.0-1.x86_64.rpm
+- instantclient 
+--* 11.2
+---- basic
+---- devel
+---- sqlplus
+
+--* 12.2
+---- basic
+---- devel
+---- sqlplus
 ```
 
 ### global environment variables
