@@ -1,46 +1,49 @@
-## tags version
-- 5 for cx_oracle 5 and instantclient11.2
-- 6 for cx_oracle 6 and instantclient12.2
+## Base
+based on image [CENTOS:7](https://hub.docker.com/_/centos/) 
 
-## binarycat/cx_oracle container
+## Tags
+**catbinary/cx_oracle:5** (with instantclient11.2 and cx_oracle==5.3)
 
-- ### [Source](https://github.com/catbinary/cx_oracle)
-- ### [Example](https://github.com/catbinary/cx_oracle_example)
+**catbinary/cx_oracle:6** (with instantclient12.2 and cx_oracle==6.1)
 
-## inside conteiner
+## Source
+https://github.com/catbinary/cx_oracle
 
-### centos packages
-```
-epel-release
-libaio
-gcc
-python-pip
-python-devel
-```
+## Example
+https://github.com/catbinary/cx_oracle_example
+
+## Inside the image
+
+### Centos packages
+    epel-release
+    libaio
+    gcc
+    python-pip
+    python-devel
 
 ### oracle instantclient packages
-```
-- instantclient 
---* 11.2
----- basic
----- devel
----- sqlplus
+    - instantclient 
+        |_ basic
+        |_ devel
+        |_ sqlplus
 
---* 12.2
----- basic
----- devel
----- sqlplus
-```
+### For image catbinary/cx_oracle:5
 
-### global environment variables
-```
-ENV ORACLE_BASE /usr/lib/oracle/<version>
-ENV ORACLE_HOME /usr/lib/oracle/<version>/client64
-ENV LD_LIBRARY_PATH /usr/lib/oracle/<version>/client64/lib
-ENV TNS_ADMIN $ORACLE_HOME/network/admin
-```
+#### global environment variables
+    ENV ORACLE_BASE /usr/lib/oracle/11.2
+    ENV ORACLE_HOME /usr/lib/oracle/11.2/client64
+    ENV LD_LIBRARY_PATH /usr/lib/oracle/11.2/client64/lib
+    ENV TNS_ADMIN $ORACLE_HOME/network/admin
 
-### cx_oracle module
-- [pip install cx-Oracle==6.1](https://pypi.python.org/pypi/cx_Oracle/)
+- [pip install cx-Oracle==5.3](http://cx-oracle.readthedocs.io/en/latest/releasenotes.html#version-5-3-march-2017)
 
-- [pip install cx-Oracle==5.3](https://pypi.python.org/pypi/cx_Oracle/)
+### For image catbinary/cx_oracle:6
+
+#### global environment variables
+    ENV ORACLE_BASE /usr/lib/oracle/12.2
+    ENV ORACLE_HOME /usr/lib/oracle/12.2/client64
+    ENV LD_LIBRARY_PATH /usr/lib/oracle/12.2/client64/lib
+    ENV TNS_ADMIN $ORACLE_HOME/network/admin
+
+#### cx_oracle module
+- [pip install cx-Oracle==6.1](http://cx-oracle.readthedocs.io/en/latest/releasenotes.html#version-6-1-december-2017)
