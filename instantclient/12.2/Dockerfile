@@ -8,11 +8,11 @@ RUN yum install -y libaio \
 
 RUN yum clean all
 
-RUN mkdir /opt/instantclient11.2
+RUN mkdir /opt/instantclient12.2
 COPY *.rpm /opt/instantclient12.2/
 
 RUN rpm -Uvh /opt/instantclient12.2/*.rpm
-RUN rm -rf -r -f /opt/instantclient11.2
+RUN rm -rf -r -f /opt/instantclient12.2
 
 RUN echo "/usr/lib/oracle/12.2/client64/lib" >/etc/ld.so.conf.d/oracle.conf
 
