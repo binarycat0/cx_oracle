@@ -8,8 +8,8 @@ RUN yum install -y libaio \
 
 RUN yum clean all
 
-WORKDIR /opt/instantclient12.2
-ADD ./instantclient/12.2 /opt/instantclient12.2
+RUN mkdir /opt/instantclient11.2
+COPY *.rpm /opt/instantclient12.2/
 
 RUN rpm -Uvh /opt/instantclient12.2/*.rpm
 RUN rm -rf -r -f /opt/instantclient11.2
