@@ -1,17 +1,17 @@
 FROM centos:7
 
-RUN yum install -y epel-release
+RUN yum install -y epel-release; yum -y clean all
 RUN yum install -y libaio \
     gcc \
     python-pip \
-    python-devel
+    python-devel; yum -y clean all
 
 RUN yum clean all
 
 RUN mkdir /opt/instantclient12.2
 COPY *.rpm /opt/instantclient12.2/
 
-RUN rpm -Uvh /opt/instantclient12.2/*.rpm
+RUN rpm -Uvh /opt/instantclient12.2/*.rpm; yum -y clean all
 RUN rm -rf -r -f /opt/instantclient12.2
 
 RUN echo "/usr/lib/oracle/12.2/client64/lib" >/etc/ld.so.conf.d/oracle.conf
