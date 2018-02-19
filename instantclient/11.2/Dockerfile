@@ -1,12 +1,10 @@
 FROM centos:7
 
-RUN yum install -y epel-release
+RUN yum install -y epel-release; yum -y clean all
 RUN yum install -y libaio \
     gcc \
     python-pip \
-    python-devel
-
-RUN yum clean all
+    python-devel; yum -y clean all
 
 RUN mkdir /opt/instantclient11.2
 COPY *.rpm /opt/instantclient11.2/
